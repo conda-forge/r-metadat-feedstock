@@ -1,4 +1,4 @@
-{% set version = '1.2-0' %}
+{% set version = "1.4-0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/metadat_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/metadat/metadat_{{ version }}.tar.gz
-  sha256: f0cce5e30c3d256eaf5a41e4f52ffc7108e195016a4b99409e0ab4c2ef58f5b8
+  sha256: 2a5d6dee053cc329bc5c03fb6058ed99312f8f56c15028fabcbfa21170ef3f05
 
 build:
-  number: 3
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -37,8 +37,7 @@ test:
 about:
   home: https://github.com/wviechtb/metadat
   license: GPL-2.0-or-later
-  summary: A collection of meta-analysis datasets for teaching purposes, illustrating/testing
-    meta-analytic methods, and validating published analyses.
+  summary: A collection of meta-analysis datasets for teaching purposes, illustrating/testing meta-analytic methods, and validating published analyses.
   license_family: GPL2
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
