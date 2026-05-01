@@ -1,22 +1,26 @@
-{% set version = "1.4-0" %}
+{% set version = "1.6-0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-metadat
-  version: {{ version|replace("-", "_") }}
+  version: "{{ version|replace("-", "_") }}"
 
 source:
   url:
     - {{ cran_mirror }}/src/contrib/metadat_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/metadat/metadat_{{ version }}.tar.gz
-  sha256: 2a5d6dee053cc329bc5c03fb6058ed99312f8f56c15028fabcbfa21170ef3f05
+  sha256: f5f2bb245d2241ed876e17b038c856732684f1884993546721b097b554c6e305
 
 build:
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -35,7 +39,8 @@ test:
     - "\"%R%\" -e \"library('metadat')\""  # [win]
 
 about:
-  home: https://github.com/wviechtb/metadat
+  home: https://wviechtb.github.io/metadat/
+  dev_url: https://github.com/wviechtb/metadat
   license: GPL-2.0-or-later
   summary: A collection of meta-analysis datasets for teaching purposes, illustrating/testing meta-analytic methods, and validating published analyses.
   license_family: GPL2
