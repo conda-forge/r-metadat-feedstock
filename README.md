@@ -3,11 +3,13 @@ About r-metadat-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-metadat-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/wviechtb/metadat
+Home: https://wviechtb.github.io/metadat/
 
 Package license: GPL-2.0-or-later
 
 Summary: A collection of meta-analysis datasets for teaching purposes, illustrating/testing meta-analytic methods, and validating published analyses.
+
+Development: https://github.com/wviechtb/metadat
 
 Current build status
 ====================
